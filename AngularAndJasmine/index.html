@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Main page</title>
+	<meta charset="utf-8" />
+    <script src="Scripts/angular.min.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+    <script src="Scripts/app/app.js"></script>
+    <script src="Scripts/app/appservice.js"></script>
+
+    <style>
+        .table-striped>tbody>tr:nth-child(odd)>td, 
+        .table-striped>tbody>tr:nth-child(odd)>th {
+           background-color: #808080;
+         }
+    </style>
+</head>
+<body class="container-fluid" ng-app="App" ng-controller="AppController">
+    <div style="margin-left:10px">
+        <h2>AngularJS Page</h2>
+
+        <p>{{ message}}</p>
+        <button class="btn btn-success" id="btnGetAllCustomers" name="btnGetAllCustomers" ng-click="GetAllCustomers()">Get All Customers</button>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead><tr><th>First Name</th><th>Last Name</th></tr></thead>
+                <tr ng-repeat="c in customers">
+                    <td>{{ c.FirstName }}</td>
+                    <td>{{ c.LastName }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
